@@ -99,7 +99,7 @@ Les différents types de malfaçons sont :
 Une pièce jointe ne peut être ajoutée à une malfaçon que dans les états : CREATING, IN_PROGRESS, PENDING et RESOLVED
 Ces pièces jointes pourront être de type : csv, jpeg, jpg, png, svg, pdf, ods, odt, xlsx, docx
 
-Le format Jpeg est attendu pour toutes les malfaçons analysables par IA via photo. Les autres formats ne sont autorisés que dans les cas d’exceptions cités au chapitre précédent.  
+Le format Jpeg est attendu pour toutes les malfaçons analysables par IA via photo. Les autres formats ne sont autorisés que dans les cas d’exceptions cités au chapitre précédent.
 
 Il est également possible d'ajouter un commentaire lors de chaque transition (changement de statut) au sein du champs statusChangeDetails (obligatoire dans le cas de certaines transitions).
 
@@ -790,3 +790,5 @@ sequenceDiagram
   OI->>OI: Cloture ticket (CLOSED)
   OI->>OC: Notif (état = « CLOSED »)
 ```
+
+
