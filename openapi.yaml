@@ -1297,17 +1297,24 @@ components:
                 - FD47
             pbo:
               $ref: "#/components/schemas/PBO"
+            pm:
+              $ref: "#/components/schemas/PM"
             opticalRoute:
               type: array
               items:
                 $ref: "#/components/schemas/MalfaconOpticalRoutePBO"
-
+            referencePrestationPrise:
+              description: Référence Prestation Prise
+              type: string
     MalfaconOiCcf:
       allOf:
         - $ref: "#/components/schemas/MalfaconOiBase"
         - required:
             - codeFault
             - localizationDetails
+            - refPrestationPrise
+            - pbo
+            - pto
           properties:
             localization:
               type: string
@@ -1366,7 +1373,7 @@ components:
                 - FD45
                 - FD49
                 - FD51
-            refOrder:
+            refPrestationPrise:
               description: Référence de la commande
               type: string
             geographicLocation: # Localisation GPS du câble
