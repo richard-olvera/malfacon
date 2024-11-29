@@ -867,9 +867,6 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/MalfaconOpticalRoutePM"
-            garterColour:
-              type: string
-              enum: ["GRIS", "ROUGE", "ROSE", "BLEU_AQUA", "VERT", "ORANGE", "JAUNE"]
 
     MalfaconOiAmontPm:
       allOf:
@@ -918,9 +915,6 @@ components:
                 - FD27
             pm:
               $ref: "#/components/schemas/PM"
-            garterColour:
-              type: string
-              enum: ["GRIS", "ROUGE", "ROSE", "BLEU_AQUA", "VERT", "ORANGE", "JAUNE"]
 
     MalfaconOiPbo:
       allOf:
@@ -989,9 +983,6 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/MalfaconOpticalRoutePBO"
-            referencePrestationPrise:
-              description: Référence Prestation Prise
-              type: string
 
     MalfaconOiCcf:
       allOf:
