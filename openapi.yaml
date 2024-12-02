@@ -81,7 +81,19 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/MalfaconBase"
+                  oneOf:
+                    - $ref: "#/components/schemas/MalfaconOiPm"
+                    - $ref: "#/components/schemas/MalfaconOiAmontPm"
+                    - $ref: "#/components/schemas/MalfaconOiPbo"
+                    - $ref: "#/components/schemas/MalfaconOiCcf"
+                    - $ref: "#/components/schemas/MalfaconOcPm"
+                    - $ref: "#/components/schemas/MalfaconOcAmontPm"
+                    - $ref: "#/components/schemas/MalfaconOcPmPbo"
+                    - $ref: "#/components/schemas/MalfaconOcPbo"
+                    - $ref: "#/components/schemas/MalfaconOcCcf"
+                    - $ref: "#/components/schemas/MalfaconBase"
+                    - $ref: "#/components/schemas/MalfaconOiBase"
+                    - $ref: "#/components/schemas/MalfaconOcBase"
         "400": &response400
           $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/responses/errors.openapi.yaml#/components/responses/Error-400
         default:
@@ -119,14 +131,38 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/MalfaconBase"
+              oneOf:
+                - $ref: "#/components/schemas/MalfaconOiPm"
+                - $ref: "#/components/schemas/MalfaconOiAmontPm"
+                - $ref: "#/components/schemas/MalfaconOiPbo"
+                - $ref: "#/components/schemas/MalfaconOiCcf"
+                - $ref: "#/components/schemas/MalfaconOcPm"
+                - $ref: "#/components/schemas/MalfaconOcAmontPm"
+                - $ref: "#/components/schemas/MalfaconOcPmPbo"
+                - $ref: "#/components/schemas/MalfaconOcPbo"
+                - $ref: "#/components/schemas/MalfaconOcCcf"
+                - $ref: "#/components/schemas/MalfaconBase"
+                - $ref: "#/components/schemas/MalfaconOiBase"
+                - $ref: "#/components/schemas/MalfaconOcBase"
       responses:
         "201": &troubleTicket201
           description: The created malfacon
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/MalfaconBase"
+                oneOf:
+                  - $ref: "#/components/schemas/MalfaconOiPm"
+                  - $ref: "#/components/schemas/MalfaconOiAmontPm"
+                  - $ref: "#/components/schemas/MalfaconOiPbo"
+                  - $ref: "#/components/schemas/MalfaconOiCcf"
+                  - $ref: "#/components/schemas/MalfaconOcPm"
+                  - $ref: "#/components/schemas/MalfaconOcAmontPm"
+                  - $ref: "#/components/schemas/MalfaconOcPmPbo"
+                  - $ref: "#/components/schemas/MalfaconOcPbo"
+                  - $ref: "#/components/schemas/MalfaconOcCcf"
+                  - $ref: "#/components/schemas/MalfaconBase"
+                  - $ref: "#/components/schemas/MalfaconOiBase"
+                  - $ref: "#/components/schemas/MalfaconOcBase"
           headers:
             ETag:
               $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/utils/update.openapi.yaml#/components/headers/ETag
@@ -162,7 +198,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/MalfaconBase"
+                oneOf:
+                  - $ref: "#/components/schemas/MalfaconOiPm"
+                  - $ref: "#/components/schemas/MalfaconOiAmontPm"
+                  - $ref: "#/components/schemas/MalfaconOiPbo"
+                  - $ref: "#/components/schemas/MalfaconOiCcf"
+                  - $ref: "#/components/schemas/MalfaconOcPm"
+                  - $ref: "#/components/schemas/MalfaconOcAmontPm"
+                  - $ref: "#/components/schemas/MalfaconOcPmPbo"
+                  - $ref: "#/components/schemas/MalfaconOcPbo"
+                  - $ref: "#/components/schemas/MalfaconOcCcf"
+                  - $ref: "#/components/schemas/MalfaconBase"
+                  - $ref: "#/components/schemas/MalfaconOiBase"
+                  - $ref: "#/components/schemas/MalfaconOcBase"
           headers:
             ETag:
               $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/utils/update.openapi.yaml#/components/headers/ETag
@@ -184,7 +232,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/MalfaconBase"
+              oneOf:
+                - $ref: "#/components/schemas/MalfaconOiPm"
+                - $ref: "#/components/schemas/MalfaconOiAmontPm"
+                - $ref: "#/components/schemas/MalfaconOiPbo"
+                - $ref: "#/components/schemas/MalfaconOiCcf"
+                - $ref: "#/components/schemas/MalfaconOcPm"
+                - $ref: "#/components/schemas/MalfaconOcAmontPm"
+                - $ref: "#/components/schemas/MalfaconOcPmPbo"
+                - $ref: "#/components/schemas/MalfaconOcPbo"
+                - $ref: "#/components/schemas/MalfaconOcCcf"
+                - $ref: "#/components/schemas/MalfaconBase"
+                - $ref: "#/components/schemas/MalfaconOiBase"
+                - $ref: "#/components/schemas/MalfaconOcBase"
       parameters:
         - $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/utils/update.openapi.yaml#/components/parameters/If-Match
       responses:
@@ -210,7 +270,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/MalfaconBase"
+              oneOf:
+                - $ref: "#/components/schemas/MalfaconOiPm"
+                - $ref: "#/components/schemas/MalfaconOiAmontPm"
+                - $ref: "#/components/schemas/MalfaconOiPbo"
+                - $ref: "#/components/schemas/MalfaconOiCcf"
+                - $ref: "#/components/schemas/MalfaconOcPm"
+                - $ref: "#/components/schemas/MalfaconOcAmontPm"
+                - $ref: "#/components/schemas/MalfaconOcPmPbo"
+                - $ref: "#/components/schemas/MalfaconOcPbo"
+                - $ref: "#/components/schemas/MalfaconOcCcf"
+                - $ref: "#/components/schemas/MalfaconBase"
+                - $ref: "#/components/schemas/MalfaconOiBase"
+                - $ref: "#/components/schemas/MalfaconOcBase"
       parameters:
         - $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/utils/update.openapi.yaml#/components/parameters/If-Match
       responses:
@@ -572,6 +644,249 @@ paths:
 
 components:
   schemas:
+    ExtraDataOi:
+      type: object
+      additionalProperties: true
+      required:
+        - status
+        - pm_BLI
+        - group_OC
+        - idRefSource
+        - source
+      properties:
+        typePm:
+          description: "Type de PM"
+          type: array
+          items:
+            type: string
+          readOnly: true
+        status:
+          description: The condition of an entity, identified through a code.
+          type: string
+        statusChangeReason:
+          type: string
+          enum:
+            - ACKNOWLEDGED
+            - ATTRIBUTABLE_ACCEPTED
+            - CANCELED
+            - CONTESTATION_ACCEPTED
+            - CONTESTATION_DUPLICATE
+            - CONTESTATION_EQUIPMENT_ERROR
+            - CONTESTATION_NOT_ALLOWED
+            - CONTESTATION_OC_ERROR
+            - CONTESTATION_OI_RESPONSABILITY
+            - CONTESTATION_ORDER_PUT_INTO_SERVICE_FOR_MORE_THAN_A_YEAR
+            - CONTESTATION_PHOTO_NOT_USABLE
+            - CONTESTATION_REFUSED
+            - CREATING
+            - CRITICAL
+            - INFORMATION_GIVEN
+            - INFORMATION_REQUEST
+            - INVALID_FORMAT
+            - NON_ATTRIBUTABLE
+            - OC_RESOLUTION_DELAY_EXPIRED
+            - OI_RESOLUTION_IMPOSSIBLE
+            - OI_RESOLUTION_RENUNCIATION
+            - OI_RESPONSE_DELAY_EXPIRED
+            - OI_VALIDATION_DELAY_EXPIRED
+            - RESOLUTION_REFUSED_EQUIPMENT_ERROR
+            - RESOLUTION_REFUSED_NOT_REPAIRED
+            - RESOLUTION_REFUSED_PARTIALLY_RESOLVED
+            - RESOLUTION_REFUSED_PHOTO_NOT_USABLE
+            - RESOLVED_OC
+            - RESOLVED_OC_VALIDATED
+            - RESOLVED_OI_ATTRIBUTABLE
+            - RESOLVED_OI_CRITICAL
+            - RESOLVED_OI_NON_ATTRIBUTABLE
+            - RESOLVED_OI_VALIDATED
+          default: CREATING
+        statusChangeDetails:
+          description: The details of the status change.
+          type: string
+        statusChange:
+          description: Holds the status notification reasons
+            and associated date the status changed.
+
+            Populated by the server
+          type: array
+          items:
+            $ref: "https://raw.githubusercontent.com/before-interop/common/v1/common/schemas/StatusChange.openapi.yaml#/components/schemas/StatusChange"
+          readOnly: true
+        source:
+          description: "Application source : SCR, Contraste, Auditab, IOP"
+          type: string
+        idRefSource:
+          description: "Id SCR, Id Contraste, Id Auditab"
+          type: string
+        groupe_OC:
+          description: "L'UCI n'a pas la notion de SPV. C'est donc à OWF de traduire avec le bon code OC en fonction du contrat OI/OC"
+          type: string
+        UCI:
+          description: "Renseigné dès la création pour Orange OI, renseigné ultérieurement pour les RIP source Auditab	O, sauf RIP"
+          type: string
+        zone:
+          description: "ZMD / ZTD / ZSP"
+          type: string
+        departement:
+          description: "Code département"
+          type: integer
+        fee_type:
+          description: "Reprise, Pénalité, initilialisé suivant le type de malfaçon"
+          type: string
+        facturable:
+          description: "Oui / Non, initilialisé suivant le type de malfaçon"
+          type: boolean
+        contestationNumber:
+          description: "permet de stocket le nombre de contestation de la part de l'OC. Le protocole autorise 2 contestations max."
+          type: integer
+        numint:
+          description: "numéro de l'intervention en cas de reprise OI	O, si resolution owner=OI + statut=Resolved/Closed"
+          type: string
+        dysfonctionnementSi:
+          description: "Information permettant de tracer que les échanges SI entre OI et OC ont rencontré des erreurs. Information nécessaire car impact potentiel sur les réclamations/facturations etc…"
+          type: string
+        pm_BLI:
+          allOf:
+            - required:
+                - address
+                - geographicLocation
+            - $ref: "#/components/schemas/PM"
+        questionsNumber:
+          description: nombre de fois où l’on passe sur un ticket à l’état pending avec le statusChangeReason = Information_request
+          type: integer
+        ocResolutionNumber:
+          description: ajout d’un champs ocResolutionNumber = nombre de fois où l’on passe sur un ticket à l’état resolved, avec le resolutionOwner=OC
+          type: integer
+
+    ExtraDataOc:
+      type: object
+      additionalProperties: true
+      required:
+        - status
+        - contestRepairOcKOByIA
+        - contestRepairOIByIA
+        - nonRespectProtocoleParOI
+      properties:
+        typePm:
+          description: "renseigné par Malia suite appel à Achil. Sauf pour le cas Orange OI --> Orange OI devra le fournir dans un champs spécifique uniquement pour Orange OC--> à définir"
+          type: array
+          items:
+            type: string
+          readOnly: true
+        status:
+          description: The condition of an entity, identified through a code.
+          type: string
+        statusChangeDetails:
+          description: The details of the status change.
+          type: string
+        statusChangeReason:
+          type: string
+          enum:
+            - ACKNOWLEDGED
+            - ATTRIBUTABLE_ACCEPTED
+            - CANCELED
+            - CONTESTATION_ACCEPTED
+            - CONTESTATION_DUPLICATE
+            - CONTESTATION_EQUIPMENT_ERROR
+            - CONTESTATION_NOT_ALLOWED
+            - CONTESTATION_OC_ERROR
+            - CONTESTATION_OI_RESPONSABILITY
+            - CONTESTATION_ORDER_PUT_INTO_SERVICE_FOR_MORE_THAN_A_YEAR
+            - CONTESTATION_PHOTO_NOT_USABLE
+            - CONTESTATION_REFUSED
+            - CREATING
+            - CRITICAL
+            - INFORMATION_GIVEN
+            - INFORMATION_REQUEST
+            - INVALID_FORMAT
+            - NON_ATTRIBUTABLE
+            - OC_RESOLUTION_DELAY_EXPIRED
+            - OI_RESOLUTION_IMPOSSIBLE
+            - OI_RESOLUTION_RENUNCIATION
+            - OI_RESPONSE_DELAY_EXPIRED
+            - OI_VALIDATION_DELAY_EXPIRED
+            - RESOLUTION_REFUSED_EQUIPMENT_ERROR
+            - RESOLUTION_REFUSED_NOT_REPAIRED
+            - RESOLUTION_REFUSED_PARTIALLY_RESOLVED
+            - RESOLUTION_REFUSED_PHOTO_NOT_USABLE
+            - RESOLVED_OC
+            - RESOLVED_OC_VALIDATED
+            - RESOLVED_OI_ATTRIBUTABLE
+            - RESOLVED_OI_CRITICAL
+            - RESOLVED_OI_NON_ATTRIBUTABLE
+            - RESOLVED_OI_VALIDATED
+          default: CREATING
+        statusChange:
+          description: Holds the status notification reasons
+            and associated date the status changed.
+
+            Populated by the server
+          type: array
+          items:
+            $ref: "https://raw.githubusercontent.com/before-interop/common/v1/common/schemas/StatusChange.openapi.yaml#/components/schemas/StatusChange"
+          readOnly: true
+        UCI:
+          description: "Renseigné dès la création pour Orange OI, renseigné ultérieurement pour les RIP source Auditab	O, sauf RIP"
+          type: string
+        zone:
+          description: "ZMD / ZTD / ZSP"
+          type: string
+        departement:
+          description: "Code département"
+          type: integer
+        contestationNumbers:
+          description: "permet de stocket le nombre de contestation de la part de l'OC. Le protocole autorise 2 contestations max."
+          type: integer
+        pm_interne:
+          allOf:
+            - required:
+                - address
+                - geographicLocation
+            - $ref: "#/components/schemas/PM"
+        groupe_OI:
+          description: "Renseigné par Malia à partir de la table de paramétrage"
+          type: string
+        ETR:
+          type: string
+          description: "ETR"
+        idChantierContraste:
+          type: string
+          description: |
+            Le protocole n'exige pas que la ref PM soit tout le temps renseigné. Cela est fonction de la localisation de la malfaçon.
+            Nos processus et contrôles ont eux toujours besoin de cette info.
+            La référence ici est soit celle donné par l'OI et contrôlé via ACHIL comme connue, soit la référence PM renvoyée par VIO lors de l'appel au consulterV2 (champs A002)
+        contestSigByIA:
+          type: boolean
+          description: |
+            On parle ici du rejet par l'IA Orange OC de la SIG OI.
+            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket ce désaccord du rejet OI de la correction OC
+        contestRepairOcKOByIA:
+          type: boolean
+          description: |
+            On parle ici du rejet par l'OI de la résolution OC, alors que vu de l'OC, la résolution a bien été réalisée et validée par l'IA Orange OC.
+            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket ce désaccord du rejet OI de la correction OC
+        contestRepairOIByIA:
+          type: boolean
+          description: |
+            On parle ici de la résolution OI qui est "contestée/non validée" par l'OC.
+            Cas de gestion : l'IA Orange OC juge que la résolution OI est incorrecte.
+            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket cette analyse KO de la correction OI
+        nonRespectProtocoleParOI:
+          type: boolean
+          description: |
+            En tant qu'OC, pas de moyen de bloquer un OI qui ne respecte pas les délais ou autre. Ce champs permet de tracer l'erreur OI vis-à-vis du protocole
+        motifNonRespectProtocoleParOI:
+          type: array
+          items:
+            format: string
+          description: |
+            Liste de valeur (ex:Délai Résolution OC non respecté par l'OI)
+        questionsNumber:
+          description: nombre de fois où l’on passe sur un ticket à l’état pending avec le statusChangeReason = Information_request
+          type: integer
+        ocResolutionNumber:
+          description: ajout d’un champs ocResolutionNumber = nombre de fois où l’on passe sur un ticket à l’état resolved, avec le resolutionOwner=OC
+          type: integer
     MalfaconBase:
       allOf:
         - $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/schemas/TroubleTicket.openapi.yaml#/components/schemas/TroubleTicket
@@ -686,6 +1001,8 @@ components:
                 - CLOSED
                 - CREATING
               default: CREATING
+            extraData:
+              $ref: "#/components/schemas/ExtraDataOc"
 
     MalfaconOiBase:
       allOf:
@@ -773,7 +1090,8 @@ components:
               description: The deadline for pending status
               type: string
               format: date
-
+            extraData:
+              $ref: "#/components/schemas/ExtraDataOi"
     MaxResolutionOcDuration:
       type: object
       properties:
