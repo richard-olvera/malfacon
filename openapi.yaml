@@ -649,7 +649,7 @@ components:
       additionalProperties: true
       required:
         - status
-        - pm_BLI
+        - pm_source
         - group_OC
         - idRefSource
         - source
@@ -745,11 +745,8 @@ components:
         dysfonctionnementSi:
           description: "Information permettant de tracer que les échanges SI entre OI et OC ont rencontré des erreurs. Information nécessaire car impact potentiel sur les réclamations/facturations etc…"
           type: string
-        pm_BLI:
+        pm_source:
           allOf:
-            - required:
-                - address
-                - geographicLocation
             - $ref: "#/components/schemas/PM"
         questionsNumber:
           description: nombre de fois où l’on passe sur un ticket à l’état pending avec le statusChangeReason = Information_request
@@ -757,14 +754,38 @@ components:
         ocResolutionNumber:
           description: ajout d’un champs ocResolutionNumber = nombre de fois où l’on passe sur un ticket à l’état resolved, avec le resolutionOwner=OC
           type: integer
+        uciResolutionNumber:
+          description: nombre de fois où l’on passe sur un ticket à l’état resol_oc_a_valid_uci, avec le resolutionOwner=OC
+          type: integer
+        validRepairOcByIA:
+          description: résultat de la réparation OC par l’IA (OK, KO ou vide si IA n'a pas été utilisé ou n'a rien eu à dire)
+          type: string
+        resultRepairOcByIA:
+          description: pourquoi on a refusé leur résolution OC
+          type: string
+        echecRepriseOi:
+          description: raison de l'échec de la reprise OI (creation_ot_impossible ou date_max_cloture_depassee)
+          type: string
+        codeCloture:
+          description: "DEF"
+          type: string
+        commentaireReleve:
+          type: string
+        photoRepriseOi:
+          description: photo ou pas
+          type: boolean
+        maxResolutionOcDurationInit:
+          description: délai max de résolution OC initial
+          type: integer
+        typeRaccordement:
+          description: "à partir de la valeur du champs A008 de VIO lors de l’appel du consulterV2"
+          type: string
 
     ExtraDataOc:
       type: object
       additionalProperties: true
       required:
         - status
-        - contestRepairOcKOByIA
-        - contestRepairOIByIA
         - nonRespectProtocoleParOI
       properties:
         typePm:
@@ -860,17 +881,17 @@ components:
           description: |
             On parle ici du rejet par l'IA Orange OC de la SIG OI.
             Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket ce désaccord du rejet OI de la correction OC
-        contestRepairOcKOByIA:
-          type: boolean
+        validRepairOcByIA:
+          type: string
           description: |
             On parle ici du rejet par l'OI de la résolution OC, alors que vu de l'OC, la résolution a bien été réalisée et validée par l'IA Orange OC.
-            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket ce désaccord du rejet OI de la correction OC
-        contestRepairOIByIA:
-          type: boolean
+            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket ce désaccord du rejet OI (KO) de la correction OC ou si c'est OK ou vide si l'IA n'a rien eu a dire
+        validRepairOiByIA:
+          type: string
           description: |
             On parle ici de la résolution OI qui est "contestée/non validée" par l'OC.
             Cas de gestion : l'IA Orange OC juge que la résolution OI est incorrecte.
-            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket cette analyse KO de la correction OI
+            Pour des besoins internes de KPI et de certification, il faut stocker au niveau du ticket cette analyse OK ou KO de la correction OI ou vide si l'IA n'a rien eu à dire
         nonRespectProtocoleParOI:
           type: boolean
           description: |
@@ -887,6 +908,19 @@ components:
         ocResolutionNumber:
           description: ajout d’un champs ocResolutionNumber = nombre de fois où l’on passe sur un ticket à l’état resolved, avec le resolutionOwner=OC
           type: integer
+        resultContestSigByIA:
+          type: string
+          description: motif de contestation vue par notre IA
+        resultValidRepairOcByIA:
+          description: preuve de notre IA que la résolution OC n’est pas bonne
+          type: string
+        resultValidRepairOiByIA:
+          description: preuve de notre IA que la résolution OI n’est pas bonne
+          type: string
+        typeRaccordement:
+          description: à partir de la valeur du champs A008 de VIO lors de l’appel du consulterV2
+          type: string
+
     MalfaconBase:
       allOf:
         - $ref: https://raw.githubusercontent.com/before-interop/common/v1/common/schemas/TroubleTicket.openapi.yaml#/components/schemas/TroubleTicket
